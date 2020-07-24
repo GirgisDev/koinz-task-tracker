@@ -1,27 +1,31 @@
 .app {
-  height: 100vh;
+  min-height: 100vh;
   background-image: linear-gradient(to right top, #2a2f66 0%, #78b4ba 100%);
 }
 
 .loading-txt {
   font-size: 2rem;
-  color: #FFF;
+  color: #fff;
   margin-top: 100px;
 }
-
-
-
-
 
 /*********************************\
         task board properties
 \*********************************/
 
+.task-board-header {
+  margin: 0;
+  padding: 60px 0 0;
+  text-align: center;
+  color: #fff;
+  font-size: 2.5rem;
+}
+
 .task-board {
   display: flex;
   width: 80%;
   margin: 0px auto;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .board-column {
@@ -89,10 +93,6 @@
   border-radius: 0 5px 0 5px;
 }
 
-
-
-
-
 /*********************************\
       task details properties
 \*********************************/
@@ -128,10 +128,6 @@
   color: #454545;
 }
 
-
-
-
-
 /*********************************\
         forms properties
 \*********************************/
@@ -159,10 +155,6 @@
 .form-group__control:focus {
   outline: none;
 }
-
-
-
-
 
 /*********************************\
         btns properties
@@ -194,10 +186,6 @@
   background-color: #cd4848;
   color: #fff;
 }
-
-
-
-
 
 /*********************************\
         general properties
