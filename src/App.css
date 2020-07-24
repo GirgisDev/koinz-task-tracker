@@ -64,7 +64,6 @@
 }
 .board-column__task--done {
   border-left: 6px solid #2d8c30;
-  cursor: initial;
 }
 
 .column-name {
@@ -124,7 +123,7 @@
 .task-details__details {
   margin-bottom: 40px;
 }
-.task-details__details__bale {
+.task-details__details__pale {
   color: #454545;
 }
 

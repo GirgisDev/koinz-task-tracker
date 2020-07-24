@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 const TasksBoard = ({ todo, inProgress, done }) => {
   return (
     <React.Fragment>
-      <h1 class="task-board-header">Task tracking board</h1>
+      <h1 className="task-board-header">Task tracking board</h1>
       <div className="task-board">
         <BoardColumn items={todo} name="Todo" status="todo" />
         <BoardColumn items={inProgress} name="In progress" status="inProgress" />

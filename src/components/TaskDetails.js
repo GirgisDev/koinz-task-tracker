@@ -8,8 +8,8 @@ const TaskDetails = ({task, status, closeFN, deleteTask, updateTask}) => {
       <div className="task-details__box" onClick={ev => ev.stopPropagation()}>
         <h2 className="task-details__header">Task status: {status}</h2>
         <div className="task-details__details">
-          Created at: 
-          <span className="task-details__details__bale"> { formatDate(task.createdAt) }</span>
+          Created at: &nbsp;
+          <span className="task-details__details__pale">{ formatDate(task.createdAt) }</span>
         </div>
         <div className="form-group">
           <label className="form-group__label" htmlFor="description">Task description</label>
