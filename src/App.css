@@ -40,10 +40,12 @@
   padding-top: 50px;
 }
 .board-column__task {
-  font-size: 1.1rem;
-  background-color: #fff;
+  max-height: 105px;
   padding: 20px;
   margin-bottom: 10px;
+  overflow-y: auto;
+  font-size: 1.1rem;
+  background-color: #fff;
   border-radius: 5px;
   cursor: pointer;
   user-select: none;
@@ -58,6 +60,7 @@
 }
 .board-column__task--done {
   border-left: 6px solid #2d8c30;
+  cursor: initial;
 }
 
 .column-name {
@@ -124,6 +127,10 @@
 .task-details__details__bale {
   color: #454545;
 }
+
+
+
+
 
 /*********************************\
         forms properties
