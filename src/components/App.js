@@ -16,10 +16,9 @@ class App extends Component {
       <div className="app">
         <LoadingBar />
         {this.props.loading 
-          ? <h3 className="text-center">Loading...</h3> 
-          : (
-            <TasksBoard />
-        )}
+          ? <h3 className="text-center loading-txt">Loading...</h3> 
+          : <TasksBoard />
+        }
       </div>
     );
   }

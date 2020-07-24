@@ -3,6 +3,20 @@
   background-image: linear-gradient(to right top, #2a2f66 0%, #78b4ba 100%);
 }
 
+.loading-txt {
+  font-size: 2rem;
+  color: #FFF;
+  margin-top: 100px;
+}
+
+
+
+
+
+/*********************************\
+        task board properties
+\*********************************/
+
 .task-board {
   display: flex;
   width: 80%;
@@ -26,7 +40,8 @@
   padding-top: 50px;
 }
 .board-column__task {
-  background-color: #FFF;
+  font-size: 1.1rem;
+  background-color: #fff;
   padding: 20px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -35,9 +50,18 @@
   box-shadow: 2px 3px 10px -2px rgba(22, 22, 22, 0.3);
 }
 
+.board-column__task--todo {
+  border-left: 6px solid #366cb4;
+}
+.board-column__task--inProgress {
+  border-left: 6px solid #ef7e2e;
+}
+.board-column__task--done {
+  border-left: 6px solid #2d8c30;
+}
+
 .column-name {
   color: #1c2640;
-  font-size: 0.9rem;
   font-weight: bold;
   padding: 0;
   margin: 0;
@@ -45,6 +69,132 @@
   left: 14px;
   top: 10px;
 }
+
+.add-task-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 30px;
+  line-height: 27px;
+  padding: 0 10px;
+  background-color: #435b81;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 0 5px 0 5px;
+}
+
+
+
+
+
+/*********************************\
+      task details properties
+\*********************************/
+
+.task-details {
+  position: fixed;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.6);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+}
+
+.task-details__box {
+  width: 40%;
+  background-color: #fff;
+  padding: 50px 30px 40px;
+  margin: 300px auto;
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px -3px rgba(22, 22, 22, 0.4);
+}
+
+.task-details__header {
+  margin-bottom: 10px;
+}
+.task-details__details {
+  margin-bottom: 40px;
+}
+.task-details__details__bale {
+  color: #454545;
+}
+
+/*********************************\
+        forms properties
+\*********************************/
+
+.form-group {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.form-group__label {
+  position: absolute;
+  top: -24px;
+  font-size: 0.9rem;
+  color: #454545;
+}
+
+.form-group__control {
+  width: 100%;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+.form-group__control:focus {
+  outline: none;
+}
+
+
+
+
+
+/*********************************\
+        btns properties
+\*********************************/
+
+.btn {
+  border: none;
+  color: #454545;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin-right: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none;
+}
+
+.btn--primary {
+  background-color: #366cb4;
+  color: #fff;
+}
+.btn--danger {
+  background-color: #cd4848;
+  color: #fff;
+}
+
+
+
+
+
+/*********************************\
+        general properties
+\*********************************/
 
 .text-center {
   text-align: center;

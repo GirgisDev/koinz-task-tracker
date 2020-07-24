@@ -13,37 +13,79 @@ export function receiveTasks(tasks) {
     tasks
   }
 }
-export const addTask = (task) => {
+const addTask = task => {
   return {
     type: ADD_TASK,
     task
   }
 }
-const updateTaskStatus = (task) => {
+const updateTaskStatus = ({id, status})=> {
   return {
     type: UPDATE_TASK_STATUS,
-    id: task.id,
-    status: task.status
+    status,
+    id
   }
 }
-export const updateTaskDesc = (task) => {
+const updateTaskDesc = ({id, description}) => {
   return {
-    type: UPDATE_TASK_STATUS,
-    id: task.id,
-    desc: task.desc
+    type: UPDATE_TASK_DESC,
+    description,
+    id
   }
 }
-export const deleteTask = (id) => {
+const deleteTask = id => {
   return {
-    type: UPDATE_TASK_STATUS,
+    type: DELETE_TASK,
     id
   }
 }
 
-export const handleupdateTaskStatus = task => dispatch => {
-  dispatch(updateTaskStatus(task));
 
-  return API.updateTaskStatus(task, error => {
-    if (error) alert("An error occured. Try again!")
+export const handleAddNewTask = task => dispatch => {
+  dispatch(addTask(task));
+  
+  return API.addNewTask(task, error => {
+    if (error) {
+      dispatch(deleteTask(task.id));
+      alert("An error occured. Try again!");
+    } else {
+      API.getInitialData(tasks => {
+        let tasksArray = Object.keys(tasks).map(id => ({ ...tasks[id], id }));
+        dispatch(receiveTasks(tasksArray));
+      })
+    }
+  });
+}
+
+export const handleUpdateTaskStatus = ({task, status}) => dispatch => {
+  dispatch(updateTaskStatus({id: task.id, status}));
+  
+  return API.updateTaskStatus(({ id: task.id, status }), error => {
+    if (error) {
+      dispatch(updateTaskStatus({id: task.id, status: task.status}));
+      alert("An error occured. Try again!")
+    }
+  });
+}
+
+export const handleUpdateTaskDescription = ({task, description}) => dispatch => {
+  dispatch(updateTaskDesc({id: task.id, description}));
+  
+  return API.updateTaskDesc(({ id: task.id, description }), error => {
+    if (error) {
+      dispatch(updateTaskDesc({id: task.id, description: task.description}));
+      alert("An error occured. Try again!")
+    }
+  });
+}
+
+export const handleDeleteTask = task => dispatch => {
+  dispatch(deleteTask(task.id));
+  
+  return API.deleteTask(task.id, error => {
+    if (error) {
+      dispatch(addTask(task));
+      alert("An error occured. Try again!")
+    }
   });
 }
