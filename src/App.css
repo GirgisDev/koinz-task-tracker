@@ -109,10 +109,10 @@
 }
 
 .task-details__box {
-  width: 40%;
+  width: 45%;
   background-color: #fff;
   padding: 50px 30px 40px;
-  margin: 200px auto;
+  margin: 180px auto;
   border-radius: 5px;
   box-shadow: 4px 4px 10px -3px rgba(22, 22, 22, 0.4);
 }
@@ -153,6 +153,13 @@
 
 .form-group__control:focus {
   outline: none;
+}
+
+.form-group__control--text-area {
+  height: 70px;
+  padding: 8px 10px;
+  font-family: inherit;
+  resize: none;
 }
 
 /*********************************\

@@ -13,13 +13,13 @@ const TaskDetails = ({task, status, closeFN, deleteTask, updateTask}) => {
         </div>
         <div className="form-group">
           <label className="form-group__label" htmlFor="description">Task description</label>
-          <input 
+          <textarea 
             name="description" 
-            className="form-group__control"
+            className="form-group__control form-group__control--text-area"
             id="description" 
             placeholder="Enter task description here"
             defaultValue={task.description}
-            ref={input => taskDescription = input} />
+            ref={input => taskDescription = input}></textarea>
         </div>
         
         <button 
