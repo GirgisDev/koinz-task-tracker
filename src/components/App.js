@@ -1,27 +1,24 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import './../App.css';
 import { connect } from 'react-redux';
 import LoadingBar from 'react-redux-loading';
 import { handleInitialData } from '../actions/shared.action';
 import TasksBoard from './TasksBoard';
 
-class App extends Component {
+const App = ({ dispatch, loading }) => {
+  useEffect(() => {
+    dispatch(handleInitialData())
+  }, [])
 
-  componentDidMount() {
-    this.props.dispatch(handleInitialData())
-  }
-
-  render() {
-    return (
-      <div className="app">
-        <LoadingBar />
-        {this.props.loading 
-          ? <h3 className="text-center loading-txt">Loading...</h3> 
-          : <TasksBoard />
-        }
-      </div>
-    );
-  }
+  return (
+    <div className="app">
+      <LoadingBar />
+      {loading
+        ? <h3 className="text-center loading-txt">Loading...</h3>
+        : <TasksBoard />
+      }
+    </div>
+  );
 }
 
 const mapStateToProps = ({ loadingBar }) => ({ loading: loadingBar.default })

@@ -19,6 +19,9 @@ const BoardColumn = ({ status, name, items = [], allTasks, dispatch }) => {
     ev.preventDefault();
     let id = ev.dataTransfer.getData("text"),
       task = allTasks.find(task => task.id === id);
+
+    if (task.status === "todo" && status === "done") return;
+    
     dispatch(handleUpdateTaskStatus({ task, status }));
   }
 
@@ -62,7 +65,7 @@ const BoardColumn = ({ status, name, items = [], allTasks, dispatch }) => {
           <div
             key={item.id}
             id={item.id}
-            draggable={status === "done" ? false : true} onDragStart={ev => dragItem(ev)}
+            draggable={status !== "done"} onDragStart={ev => dragItem(ev)}
             onClick={() => showDetailsPopup(item)}
             className={`board-column__task board-column__task--${status}`}>{item.description}</div>
         ))
